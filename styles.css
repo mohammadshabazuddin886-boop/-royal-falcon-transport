@@ -1,0 +1,77 @@
+:root{
+  --black:#060606;
+  --panel:#0b0b0b;
+  --gold:#c99a2e;
+  --gold-light:#e0b753;
+  --white:#f6f6f6;
+  --muted:#b8b8b8;
+  --line:rgba(201,154,46,.42);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--white);font-family:Inter,Arial,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.site-header{height:86px;display:flex;align-items:center;gap:30px;padding:10px 4vw;background:#050505;position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line)}
+.brand img{width:220px;height:64px;object-fit:cover;object-position:center}
+.nav{display:flex;gap:34px;margin-left:auto}
+.nav a{font-size:.9rem;text-transform:uppercase;letter-spacing:.04em;padding:10px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--gold)}
+.phone{border:1px solid var(--gold);padding:12px 18px;color:var(--gold-light);font-weight:700}
+.menu-toggle{display:none;background:none;color:var(--gold);border:1px solid var(--gold);font-size:1.3rem;padding:7px 10px}
+.hero{min-height:560px;position:relative;background:url('assets/hero-truck.jpg') center/cover no-repeat;display:flex;align-items:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.72) 38%,rgba(0,0,0,.15) 70%,rgba(0,0,0,.06))}
+.hero-content{position:relative;z-index:2;padding:65px 5vw;max-width:650px}
+.eyebrow,.section-kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-size:.82rem}
+h1,h2{font-family:Cinzel,Georgia,serif;margin:.15em 0 .35em}
+h1{font-size:clamp(3rem,6vw,5.8rem);line-height:.96;max-width:650px}
+h1 span{color:var(--gold)}
+.hero-sub{font-size:1.35rem;font-weight:700;margin-bottom:0}
+.button{display:inline-block;margin-top:28px;background:linear-gradient(90deg,var(--gold),var(--gold-light));color:#080808;font-weight:800;text-transform:uppercase;padding:15px 24px;border:none;cursor:pointer}
+.founder-section{display:grid;grid-template-columns:minmax(260px,.8fr) 1.2fr .8fr;gap:34px;padding:52px 5vw;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#080808}
+.founder-photo img{width:100%;height:390px;object-fit:cover;object-position:center 42%;border:1px solid var(--line)}
+.founder-copy h2{font-size:clamp(2rem,3vw,3.2rem)}
+.founder-title{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.values{display:grid;gap:22px;border-left:1px solid var(--line);padding-left:30px}
+.values article{padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.values h3,.service-grid h3,footer h3{margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em}
+.values h3{color:var(--gold)}
+.services{padding:58px 5vw 48px;text-align:center}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.service-grid article{padding:32px 26px;border-right:1px solid var(--line)}
+.service-grid article:last-child{border-right:none}
+.icon{font-size:2.2rem;color:var(--gold);margin-bottom:15px}
+.service-grid p{color:var(--muted)}
+.fleet-note{max-width:760px;margin:30px auto 0;border:1px solid var(--gold);color:var(--gold-light);padding:14px 22px;font-weight:700}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding:65px 8vw;background:linear-gradient(135deg,#0b0b0b,#111)}
+.why h2,.contact h2{font-size:clamp(2rem,4vw,3.6rem)}
+.why>p{font-size:1.15rem;color:#d0d0d0}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;padding:70px 8vw;border-top:1px solid var(--line)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input,textarea{width:100%;background:#111;border:1px solid #333;color:white;padding:14px;font:inherit}
+textarea{grid-column:1/-1}
+form .button{justify-self:start}
+footer{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:40px;padding:42px 5vw;background:#040404;border-top:1px solid var(--line);color:#ccc}
+.footer-brand img{width:250px;height:120px;object-fit:cover}
+footer a:hover{color:var(--gold)}
+@media(max-width:900px){
+  .site-header{height:auto;flex-wrap:wrap}
+  .menu-toggle{display:block;margin-left:auto}
+  .nav{display:none;width:100%;flex-direction:column;gap:0;margin:0;padding:8px 0}
+  .nav.open{display:flex}
+  .phone{display:none}
+  .founder-section{grid-template-columns:1fr}
+  .values{border-left:none;padding-left:0}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .service-grid article:nth-child(2){border-right:none}
+  .why,.contact{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .brand img{width:175px;height:54px}
+  .hero{min-height:520px;background-position:62% center}
+  .hero-content{padding:50px 24px}
+  .service-grid{grid-template-columns:1fr}
+  .service-grid article{border-right:none;border-bottom:1px solid var(--line)}
+  form{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr}
+}
